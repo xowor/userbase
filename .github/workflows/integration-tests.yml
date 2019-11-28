@@ -9,9 +9,12 @@ on: [push]
 jobs:
   integration-tests:
 
-    runs-on: node-12
+    runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
       - name: Install build-essential and python
         run: sudo apt-get install -y build-essential python
       - name: Checkout
