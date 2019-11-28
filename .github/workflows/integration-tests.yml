@@ -9,7 +9,7 @@ on: [push]
 jobs:
   integration-tests:
 
-    runs-on: ubuntu-latest
+    runs-on: node-12
 
     steps:
       - name: Install build-essential and python
