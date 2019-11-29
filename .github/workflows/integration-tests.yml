@@ -26,5 +26,5 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
-          start: npm test:setup-ci
+          start: npm run test:setup-ci
           wait-on: 'http://localhost:3000'
