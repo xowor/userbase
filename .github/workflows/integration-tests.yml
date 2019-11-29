@@ -31,4 +31,5 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
           start: npm run start
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:8080'
+          wait-on-timeout: 120
