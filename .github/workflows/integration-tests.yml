@@ -27,4 +27,4 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
           start: npm run test:setup-ci
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:8080'
