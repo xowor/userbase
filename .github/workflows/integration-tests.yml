@@ -18,7 +18,7 @@ jobs:
       - name: Install build-essential and python
         run: sudo apt-get install -y build-essential python awscli
       - name: Create AWS CLI configuration file
-        run: echo "[encrypted]\naws_access_key_id = ${{ AWS_ACCESS_KEY_ID }}\naws_secret_access_key = ${{ AWS_SECRET_ACCESS_KEY }}" | tee ~/.aws/credentials
+        run: echo "[encrypted]\naws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}\naws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}" | tee ~/.aws/credentials
       - name: Checkout
         uses: actions/checkout@v1
       # Install NPM dependencies, cache them correctly
