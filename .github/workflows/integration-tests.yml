@@ -11,6 +11,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      AWS_PROFILE: encrypted
+
     steps:
       - uses: actions/setup-node@v1
         with:
