@@ -41,3 +41,4 @@ jobs:
           start: npm run start
           wait-on: 'http://localhost:8080/ping'
           wait-on-timeout: 120
+          record: true
