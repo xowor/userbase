@@ -21,6 +21,8 @@ jobs:
         run: mkdir -p ~/.aws && echo "[default]\nregion=${{ secrets.AWS_REGION }}" | tee ~/.aws/config
       - name: Create AWS CLI credentials file
         run: echo "[encrypted]\naws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}\naws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}" | tee ~/.aws/credentials
+      - name: AWS CLI test
+        run: aws configure list
       - name: Checkout
         uses: actions/checkout@v1
       # Install NPM dependencies, cache them correctly
