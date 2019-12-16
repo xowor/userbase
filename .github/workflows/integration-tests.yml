@@ -17,8 +17,10 @@ jobs:
           node-version: '12.x'
       - name: Install build-essential and python
         run: sudo apt-get install -y build-essential python awscli
-      - name: Create AWS CLI configuration file
-        run: mkdir -p ~/.aws && echo "[encrypted]\naws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}\naws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}" | tee ~/.aws/credentials
+      - name: Create AWS CLI config file
+        run: mkdir -p ~/.aws && echo "[default]\nregion=${{ secrets.AWS_REGION }}" | tee ~/.aws/config
+      - name: Create AWS CLI credentials file
+        run: echo "[encrypted]\naws_access_key_id = ${{ secrets.AWS_ACCESS_KEY_ID }}\naws_secret_access_key = ${{ secrets.AWS_SECRET_ACCESS_KEY }}" | tee ~/.aws/credentials
       - name: Checkout
         uses: actions/checkout@v1
       # Install NPM dependencies, cache them correctly
